@@ -10,7 +10,7 @@ public class Menu
         Console.WriteLine("1. New Journal Entry");
         Console.WriteLine("2. Display Journal");
         Console.WriteLine("3. Read Journal From File");
-        Console.WriteLine("4. Write Journal to File");
+        Console.WriteLine("4. Save Journal to File");
         Console.WriteLine("5. Quit");
 
         string input = Console.ReadLine();

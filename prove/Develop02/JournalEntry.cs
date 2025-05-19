@@ -2,12 +2,12 @@
 
 public class JournalEntry
 {
-    
+    // Fields
     public string _date;
     public string _question;
     public string _response;
-    DateTime now = DateTime.Now;
 
+    // Default constructor
     public JournalEntry()
     {
         _date = "";
@@ -15,18 +15,35 @@ public class JournalEntry
         _response = "";
     }
 
-    public void GetQuestionAndResponse()
+    // Constructor used for loading from file
+    public JournalEntry(string date, string question, string response)
     {
-        JournalQuestions NewQuestion = new JournalQuestions();
-        _question = NewQuestion.GetRandomQuestion();
-        Console.WriteLine(_question);
-        _response = Console.ReadLine();
-        _date = now.ToShortDateString();
+        _date = date;
+        _question = question;
+        _response = response;
     }
 
-    public string EntryText; //<-- ?
-    //Display(): void
-    //Entry To String(): Void
-    //CreateEntryWithPrompt(prompt: string): void
-    //CreateEntryWithData(date:string, ||) <-- Use constructor instead, pass information into the JournalEntry to construct an entry
+    // Used to generate a new entry interactively
+    public void GetQuestionAndResponse()
+    {
+        JournalQuestions newQuestion = new JournalQuestions();
+        _question = newQuestion.GetRandomQuestion();
+        Console.WriteLine(_question);
+        _response = Console.ReadLine();
+        _date = DateTime.Now.ToShortDateString();
+    }
+
+    // Convert the entry to a formatted string for display
+    public void Display()
+    {
+        Console.WriteLine($"Date: {_date}");
+        Console.WriteLine($"Prompt: {_question}");
+        Console.WriteLine($"Response: {_response}\n");
+    }
+
+    // Convert the entry to a string for saving to a file
+    public string ToFileString()
+    {
+        return $"{_date}#{_question}#{_response}";
+    }
 }

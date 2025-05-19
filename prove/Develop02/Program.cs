@@ -20,39 +20,41 @@ class Program
             switch (choice)
             {
                 case 1:
-                    myJournal.Entries();
+                    myJournal.AddEntry();
                     break;
 
                 case 2:
                     List<JournalEntry> entriesList = myJournal.returnJournalEntry();
                     foreach (JournalEntry item in entriesList)
                     {
-                        Console.WriteLine($"Date: {item._date} Questions: {item._question}, Responsive: {item._response}");
+                        Console.WriteLine($"Date: {item._date} Question: {item._question}, Response: {item._response}");
                     }
                     break;
 
                 case 3:
-                    /* 3. Read Journal From File
-                    - Has to ask for the file you want to read from
-                    - ONLY displays the content of the file
-                    - Essentially a basic file reader
-                    - Should display the journal in format of: 
-                    - Date: Question (newline) Answer. (newline) Repeat
-                    - THAT IS ALL IT DOES */
-                    Console.WriteLine("What is the name of the file you would like to read from?");
-                    string filename = Console.ReadLine();
-                    myJournal.ReadFromFile(filename);
-                    
 
+                    Console.WriteLine("Load Option:");
+                    //DisplayFilesInDirectory();
+                    Console.WriteLine("Enter the filename to load:");
+                    string fileToLoad = Console.ReadLine();
+                    myJournal.LoadFromFile(fileToLoad);
+                    Console.WriteLine("File loaded successfully.");
+                    Console.WriteLine("Press Enter to go back...");
+                    Console.ReadLine();
+                    //Console.WriteLine("What is the name of the file you would like to read from?");
+                    //string filename = Console.ReadLine();
+                    //myJournal.ReadFromFile(filename);
                     break;
                 case 4:
-                    /* 4. Write Journal To File
-                        - HAS to ask for the file to write to, creates new file if file not found
-                        - Takes the current unsaved entries string list from New Journal Entry and saves them to file
-                        - Again, THAT IS ALL IT DOES */
-                    //Journal.WriteToFile();
-                    Console.WriteLine("You chose 4!");
+
+                    Console.WriteLine("Enter the filename to save the entry:");
+                    string fileToSave = Console.ReadLine();
+                    myJournal.SaveToFile(fileToSave); // ✅ Actually saves the entries
+                    Console.WriteLine("Entry saved successfully.");
+                    Console.WriteLine("Press Enter to go back...");
+                    Console.ReadLine();
                     break;
+
                 case 5:
                     //Ends program
                     break;
