@@ -39,7 +39,7 @@ class Program
                     string fileToLoad = Console.ReadLine();
                     myJournal.LoadFromFile(fileToLoad);
                     Console.WriteLine("File loaded successfully.");
-                    Console.WriteLine("Press Enter to go back...");
+                    Console.WriteLine("Press any key to go back...");
                     Console.ReadLine();
                     //Console.WriteLine("What is the name of the file you would like to read from?");
                     //string filename = Console.ReadLine();
