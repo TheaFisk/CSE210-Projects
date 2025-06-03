@@ -1,29 +1,37 @@
 
+// Reference.cs
 public class Reference
 {
-    string book = "";
-    int chapter = 0;
-    int startVerse = 0;
-    int endVerse = 0;
+    private string _book;
+    private int _chapter;
+    private int _startVerse;
+    private int _endVerse;
 
-    Reference()
+    public Reference(string book, int chapter, int verse)
     {
-        Console.Clear();
+        _book = book;
+        _chapter = chapter;
+        _startVerse = verse;
+        _endVerse = verse;
     }
 
-    
-    public Reference(string name, int chapter, int startVerse, int endVerse, string text)
+    public Reference(string book, int chapter, int startVerse, int endVerse)
     {
-        Console.WriteLine("Whaaaat");
-    }
-    public Reference
-    (Reference _reference, string text)
-    {
-        Console.WriteLine("Scripture");
+        _book = book;
+        _chapter = chapter;
+        _startVerse = startVerse;
+        _endVerse = endVerse;
     }
 
     public override string ToString()
     {
-        return base.ToString();
+        if (_startVerse == _endVerse)
+        {
+            return $"{_book} {_chapter}:{_startVerse}";
+        }
+        else
+        {
+            return $"{_book} {_chapter}:{_startVerse}-{_endVerse}";
+        }
     }
 }

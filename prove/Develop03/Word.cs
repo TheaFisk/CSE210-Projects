@@ -1,6 +1,8 @@
 
 using System;
 
+
+// Word.cs
 public class Word
 {
     private string _word;
@@ -11,12 +13,39 @@ public class Word
         _word = word;
         _hidden = false;
     }
+
     public bool IsHidden()
     {
-        
+        return _hidden;
     }
+
+    public void Hide()
+    {
+        _hidden = true;
+    }
+
     public string GetWordString()
     {
-        return smth;
+        if (_hidden)
+        {
+            // Create underscores for each character in the word (excluding punctuation)
+            string result = "";
+            foreach (char c in _word)
+            {
+                if (char.IsLetter(c))
+                {
+                    result += "_";
+                }
+                else
+                {
+                    result += c; // Keep punctuation visible
+                }
+            }
+            return result;
+        }
+        else
+        {
+            return _word;
+        }
     }
 }
