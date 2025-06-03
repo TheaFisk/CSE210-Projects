@@ -2,7 +2,6 @@
 using System;
 
 
-// Word.cs
 public class Word
 {
     private string _word;
