@@ -1,9 +1,14 @@
 using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text.Json;
 
-class Program
+// Main program
+public class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop05 World!");
+        GoalManager manager = new GoalManager();
+        manager.Start();
     }
 }
