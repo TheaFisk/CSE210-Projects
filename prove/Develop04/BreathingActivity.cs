@@ -1,5 +1,4 @@
 
-// BreathingActivity.cs - Breathing exercise activity
 public class BreathingActivity : Activities
 {
     public BreathingActivity() : base("Breathing Activity", 

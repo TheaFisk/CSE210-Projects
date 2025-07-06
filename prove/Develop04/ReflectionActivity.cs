@@ -1,5 +1,4 @@
 
-// ReflectionActivity.cs - Reflection activity with prompts
 public class ReflectionActivity : Activities
 {
     private List<string> _prompts;

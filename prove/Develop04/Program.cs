@@ -1,5 +1,4 @@
 
-// Program.cs - Main program
 class Program
 {
     static void Main(string[] args)
@@ -14,7 +13,8 @@ class Program
             Console.WriteLine("1. Reflection Activity");
             Console.WriteLine("2. Breathing Activity");
             Console.WriteLine("3. Enumeration Activity");
-            Console.WriteLine("4. Quit");
+            Console.WriteLine("4. Future Focus Activity");
+            Console.WriteLine("5. Quit");
             Console.Write("Enter a number to get started: ");
             
             string userInput = Console.ReadLine();
@@ -35,6 +35,9 @@ class Program
                         activity = new EnumerationActivity();
                         break;
                     case 4:
+                        activity = new FutureFocusActivity();
+                        break;
+                    case 5:
                         Console.WriteLine("Thank you for using the Relaxation Activity Program!");
                         return;
                     default:

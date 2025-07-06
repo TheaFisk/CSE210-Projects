@@ -1,4 +1,4 @@
-// Activities.cs - Base class for all activities
+
 using System;
 using System.Collections.Generic;
 using System.Threading;

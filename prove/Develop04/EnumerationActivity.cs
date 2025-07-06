@@ -1,5 +1,4 @@
 
-// EnumerationActivity.cs - List positive things activity
 public class EnumerationActivity : Activities
 {
     private List<string> _prompts;
